@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\CoreAPI\\CoreAPI\\CoreAPI.csproj": {}
+    "C:\\Users\\MAT\\Documents\\GitHub\\CoreAPI\\CoreAPI\\CoreAPI.csproj": {}
   },
   "projects": {
-    "E:\\CoreAPI\\CoreAPI\\CoreAPI.csproj": {
+    "C:\\Users\\MAT\\Documents\\GitHub\\CoreAPI\\CoreAPI\\CoreAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\CoreAPI\\CoreAPI\\CoreAPI.csproj",
+        "projectUniqueName": "C:\\Users\\MAT\\Documents\\GitHub\\CoreAPI\\CoreAPI\\CoreAPI.csproj",
         "projectName": "CoreAPI",
-        "projectPath": "E:\\CoreAPI\\CoreAPI\\CoreAPI.csproj",
+        "projectPath": "C:\\Users\\MAT\\Documents\\GitHub\\CoreAPI\\CoreAPI\\CoreAPI.csproj",
         "packagesPath": "C:\\Users\\MAT\\.nuget\\packages\\",
-        "outputPath": "E:\\CoreAPI\\CoreAPI\\obj\\",
+        "outputPath": "C:\\Users\\MAT\\Documents\\GitHub\\CoreAPI\\CoreAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MAT\\AppData\\Roaming\\NuGet\\NuGet.Config",
