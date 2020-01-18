@@ -12,9 +12,12 @@ namespace CoreAPI.Contracts.v1
         public const string Base = Root+"/"+Version +"/";
         public static class Products
         {
+            public const string Get = Base + "products/{productID}";
             public const string GetALL = Base + "products";
-            public const string Create = "api/v1/products";
-            public const string Get = "api/v1/products/{productid}";
+            public const string Create = Base + "products";
+            public const string Update = Base + "products/{productID}";
+            public const string Delete = Base + "products/{productID}";
+          
         }
     }
 }
