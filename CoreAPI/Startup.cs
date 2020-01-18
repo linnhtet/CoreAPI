@@ -34,13 +34,14 @@ namespace CoreAPI
             {
                 app.UseHsts();
             }
+            app.UseStaticFiles();
+            app.UseAuthentication();
             var swaggeroptions = new SwaggerOptions();
             Configuration.GetSection(nameof(SwaggerOptions)).Bind(swaggeroptions);
             app.UseSwagger(option => { option.RouteTemplate = swaggeroptions.JsonRoute; });
             app.UseSwaggerUI(option => { option.SwaggerEndpoint(swaggeroptions.UIEndpoint, swaggeroptions.Description); });
 
-            app.UseStaticFiles();
-
+           
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

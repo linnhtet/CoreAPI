@@ -18,8 +18,6 @@ namespace CoreAPI.Installers
             configuration.Bind(nameof(jwtSettings), jwtSettings);
             services.AddSingleton(jwtSettings);
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -34,10 +32,13 @@ namespace CoreAPI.Installers
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtSettings.Secret)),
                     ValidateIssuer = false,
                     ValidateAudience = false,
-                    ValidateLifetime = true,
-                    RequireExpirationTime = false
+                    RequireExpirationTime = false,
+                    ValidateLifetime = true
+                   
                 };
             });
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
 
             services.AddSwaggerGen(x =>
             {
@@ -51,8 +52,8 @@ namespace CoreAPI.Installers
                 {
                     Description = "JWT Authorization header using the Bearer scheme",
                     Name = "Authorization",
-                    In = "Header",
-                    Type = "ApiKey"
+                    In = "header",
+                    Type = "apiKey"
                 });
                 x.AddSecurityRequirement(security);
             });
