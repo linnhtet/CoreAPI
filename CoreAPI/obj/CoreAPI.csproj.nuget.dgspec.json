@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MAT\\Documents\\GitHub\\CoreAPI\\CoreAPI\\CoreAPI.csproj": {}
+    "D:\\Core\\CoreAPI\\CoreAPI\\CoreAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MAT\\Documents\\GitHub\\CoreAPI\\CoreAPI\\CoreAPI.csproj": {
+    "D:\\Core\\CoreAPI\\CoreAPI\\CoreAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MAT\\Documents\\GitHub\\CoreAPI\\CoreAPI\\CoreAPI.csproj",
+        "projectUniqueName": "D:\\Core\\CoreAPI\\CoreAPI\\CoreAPI.csproj",
         "projectName": "CoreAPI",
-        "projectPath": "C:\\Users\\MAT\\Documents\\GitHub\\CoreAPI\\CoreAPI\\CoreAPI.csproj",
+        "projectPath": "D:\\Core\\CoreAPI\\CoreAPI\\CoreAPI.csproj",
         "packagesPath": "C:\\Users\\MAT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MAT\\Documents\\GitHub\\CoreAPI\\CoreAPI\\obj\\",
+        "outputPath": "D:\\Core\\CoreAPI\\CoreAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MAT\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -61,7 +61,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[5.0.0, )"
+              "version": "[4.0.1, )"
             }
           },
           "imports": [

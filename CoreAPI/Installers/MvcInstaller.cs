@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.Swagger;
 using System.Collections.Generic;
 using System.Text;
 
@@ -18,7 +18,7 @@ namespace CoreAPI.Installers
             configuration.Bind(nameof(jwtSettings), jwtSettings);
             services.AddSingleton(jwtSettings);
 
-            services.AddMvc(option => option.EnableEndpointRouting = false).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddAuthentication(x =>
             {
@@ -41,29 +41,20 @@ namespace CoreAPI.Installers
 
             services.AddSwaggerGen(x =>
             {
-                x.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "CoreAPI", Version = "v1" });
+                x.SwaggerDoc("v1", new Info{ Title = "CoreAPI", Version = "v1" });
 
                 var security = new Dictionary<string, IEnumerable<string>>
                 {
                     { "Bearer", new string[0] }
                 };
-                x.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                x.AddSecurityDefinition("Bearer", new ApiKeyScheme
                 {
                     Description = "JWT Authorization header using the Bearer scheme",
                     Name = "Authorization",
-                    In = ParameterLocation.Header,
-                    Type = SecuritySchemeType.ApiKey
+                    In = "Header",
+                    Type = "ApiKey"
                 });
-                x.AddSecurityRequirement(new OpenApiSecurityRequirement
-                {
-                    {
-                        new OpenApiSecurityScheme()
-                        {
-                            Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "Bearer" },
-                        },
-                        new List<string>()
-                    }
-                });
+                x.AddSecurityRequirement(security);
             });
         }
     } 
