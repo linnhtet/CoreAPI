@@ -1,4 +1,5 @@
 ﻿using CoreAPI.Options;
+using CoreAPI.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -17,6 +18,8 @@ namespace CoreAPI.Installers
             var jwtSettings = new JwtSettings();
             configuration.Bind(nameof(jwtSettings), jwtSettings);
             services.AddSingleton(jwtSettings);
+
+            services.AddScoped<IIdentityService, IdentityServices>();
 
             services.AddAuthentication(x =>
             {

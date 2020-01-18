@@ -7,10 +7,13 @@ using CoreAPI.Contracts.v1.Request;
 using CoreAPI.Contracts.v1.Response;
 using CoreAPI.Domain;
 using CoreAPI.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CoreAPI.Controllers.v1
 {
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class ProductsController : Controller
     {
         private IProductServices _productServices;

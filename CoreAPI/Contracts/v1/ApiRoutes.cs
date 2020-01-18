@@ -19,5 +19,11 @@ namespace CoreAPI.Contracts.v1
             public const string Delete = Base + "products/{productID}";
           
         }
+
+        public static class Identity
+        {
+            public const string Login = Base + "identity/Login";
+            public const string SignUp = Base + "identity/Signup";
+        }
     }
 }
