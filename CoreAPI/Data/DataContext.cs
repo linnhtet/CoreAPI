@@ -9,6 +9,8 @@ namespace CoreAPI.Data
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 
         public DbSet<Product> Products { get; set; }
+
+        public DbSet<RefreshToken> RefreshTokens { get; set; }
     }
 
 }

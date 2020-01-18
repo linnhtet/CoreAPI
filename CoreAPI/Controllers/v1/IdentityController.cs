@@ -36,7 +36,7 @@ namespace CoreAPI.Controllers.v1
                     Errors=authResponse.Errors
                 });;
             }
-            return  Ok(new AuthSuccessResponse { Token=authResponse.Token });
+            return  Ok(new AuthSuccessResponse { Token=authResponse.Token,RefreshToken = authResponse.RefreshToken });
         }
         [HttpPost(ApiRoutes.Identity.Login)]
         public async Task<IActionResult> Login([FromBody] UserLoginRequest userLoginRequest)
@@ -50,8 +50,24 @@ namespace CoreAPI.Controllers.v1
                     Errors = authResponse.Errors
                 }); ;
             }
-            return Ok(new AuthSuccessResponse { Token = authResponse.Token });
+            return Ok(new AuthSuccessResponse { Token = authResponse.Token ,RefreshToken = authResponse.RefreshToken });
         }
+        [HttpPost(ApiRoutes.Identity.Refresh)]
+        public async Task<IActionResult> Login([FromBody] RefreshTokenRequest refreshTokenRequest)
+        {
+            var authResponse = await _identitySerice.RefreshTokenAsync(refreshTokenRequest.Token, refreshTokenRequest.RefreshToken);
+
+            if (!authResponse.Success)
+            {
+                return BadRequest(new AuthFailedResponse
+                {
+                    Errors = authResponse.Errors
+                }); ;
+            }
+            return Ok(new AuthSuccessResponse { Token = authResponse.Token, RefreshToken = authResponse.RefreshToken });
+        }
+
+
     }
 }
  

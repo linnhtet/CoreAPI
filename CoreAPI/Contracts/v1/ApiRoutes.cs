@@ -22,8 +22,9 @@ namespace CoreAPI.Contracts.v1
 
         public static class Identity
         {
-            public const string Login = Base + "identity/Login";
-            public const string SignUp = Base + "identity/Signup";
+            public const string Login = Base + "identity/login";
+            public const string SignUp = Base + "identity/signup";
+            public const string Refresh = Base + "identity/refresh";
         }
     }
 }
