@@ -1,0 +1,5 @@
+D:\Core\CoreAPI\CoreAPI\obj\Debug\netcoreapp3.0\CoreAPI.csprojAssemblyReference.cache
+D:\Core\CoreAPI\CoreAPI\obj\Debug\netcoreapp3.0\CoreAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\Core\CoreAPI\CoreAPI\obj\Debug\netcoreapp3.0\CoreAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\Core\CoreAPI\CoreAPI\obj\Debug\netcoreapp3.0\CoreAPI.AssemblyInfoInputs.cache
+D:\Core\CoreAPI\CoreAPI\obj\Debug\netcoreapp3.0\CoreAPI.AssemblyInfo.cs

@@ -24,7 +24,12 @@ namespace CoreAPI.Contracts.v1
         {
             public const string Login = Base + "identity/login";
             public const string SignUp = Base + "identity/signup";
-            public const string Refresh = Base + "identity/refresh";
+            public const string Refresh = Base + "identity/tokenrefresh";
+        }
+
+        public static class Guest
+        {
+            public const string GuestEndPoint = Base + "guest";
         }
     }
 }
